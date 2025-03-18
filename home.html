@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivani Healthcare of Georgia - Dr. Panchshil Patel, M.D.</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --secondary: #06b6d4;
+            --accent: #8b5cf6;
+            --light: #f3f4f6;
+            --dark: #1e293b;
+            --text: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Gradients and shapes */
+        .bg-gradient-1 {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .bg-gradient-2 {
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(6, 182, 212, 0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .shape-1 {
+            position: absolute;
+            top: 15%;
+            right: 5%;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            opacity: 0.1;
+            z-index: -1;
+            animation: morphing 15s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(135deg, #06b6d4, #4f46e5);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            opacity: 0.1;
+            z-index: -1;
+            animation: morphing 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes morphing {
+            0% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+
+            25% {
+                border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+            }
+
+            50% {
+                border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+            }
+
+            75% {
+                border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+            }
+
+            100% {
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            }
+        }
+
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 10px 0;
+            margin: 0px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .logo img {
+            height: 50px;
+            width: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links li a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links li a:hover::after {
+            width: 80%;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg') no-repeat center center/cover;
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: .8;
+            /* Adjust the opacity as needed */
+            z-index: -1;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding-right: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            z-index: 0;
+            opacity: 0.2;
+        }
+
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 20%);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .footer-logo-text h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .footer-logo-text p {
+            font-size: 12px;
+            margin: 0;
+            opacity: 0.7;
+        }
+
+        .footer-contact p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+        }
+
+        .footer-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .footer-warning {
+            padding: 15px;
+            background: rgba(239, 68, 68, 0.1);
+            border-radius: 10px;
+            border-left: 3px solid #ef4444;
+            margin-top: 20px;
+        }
+
+        .footer-warning h3 {
+            font-size: 16px;
+            color: #ef4444;
+            margin-bottom: 5px;
+        }
+
+        .footer-warning p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        /* Animations */
+        .animate-fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-fade-right {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-fade-left {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .animate-delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .animate-delay-300 {
+            transition-delay: 300ms;
+        }
+
+        .animate-delay-400 {
+            transition-delay: 400ms;
+        }
+
+        .animate-delay-500 {
+            transition-delay: 500ms;
+        }
+
+
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 800;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: var(--text);
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .primary-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .primary-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            transition: all 0.5s ease;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(79, 70, 229, 0.4);
+        }
+
+        .primary-button:hover::before {
+            opacity: 1;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: transparent;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+        }
+
+        .secondary-button:hover {
+            background: rgba(79, 70, 229, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: all 0.5s ease;
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: calc(100% + 40px);
+            height: calc(100% + 40px);
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.3) 0%, rgba(139, 92, 246, 0.3) 100%);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        .hero-floating-card {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .hero-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .hero-card-text h3 {
+            font-size: 16px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .hero-card-text p {
+            font-size: 14px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Services Section */
+        .services {
+            background: url('images/services.jpg') no-repeat center center/cover;
+            background-size: cover;
+            background-attachment: fixed;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 20px;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-description {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            opacity: .6;
+            ;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            margin: 30px auto 20px;
+        }
+
+        .service-content {
+            padding: 0 30px 30px;
+            text-align: center;
+        }
+
+        .service-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-description {
+            color: var(--text);
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .service-link i {
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--accent);
+        }
+
+        .service-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* About Section */
+        .about {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('images/meetdocbg2.jpg') no-repeat center center/cover;
+            background-size: cover;
+            background-attachment: fixed;
+            opacity: 0.2;
+            /* Adjust the opacity as needed */
+            z-index: -1;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-main-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 2;
+        }
+
+        .about-accent-image {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            bottom: -30px;
+            right: -30px;
+            z-index: 1;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border: 5px solid white;
+        }
+
+        .about-content {
+            padding-left: 30px;
+        }
+
+        .about-subtitle {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 5px 15px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 20px;
+        }
+
+        .about-title {
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-text {
+            margin-bottom: 20px;
+            color: var(--text);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        /* Hours Section */
+        .hours {
+            background: linear-gradient(135deg, #f3f4f6 0%, #f9fafb 100%);
+        }
+
+        .hours-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hours-content {
+            padding-right: 30px;
+        }
+
+        .hours-list {
+            list-style: none;
+            margin-top: 40px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .day {
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .time {
+            color: var(--text);
+        }
+
+        .closed {
+            color: #ef4444;
+            font-weight: 500;
+        }
+
+        .hours-note {
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+            border-radius: 15px;
+            color: var(--text);
+            border-left: 4px solid var(--primary);
+        }
+
+        .hours-image {
+            position: relative;
+        }
+
+        .hours-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hours-card {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            background: white;
+            padding: 20px;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            animation: float 3s ease-in-out infinite;
+            min-width: 250px;
+        }
+
+        .hours-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(79, 70, 229, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .hours-card-text {
+            flex-grow: 1;
+            margin-bottom: 0rem;
+        }
+
+        .hours-card-text h3 {
+            font-size: 16px;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .hours-card-text p {
+            font-size: 14px;
+            color: var(--text);
+            margin: 0;
+        }
+
+        /* Promo Section */
+        .promo {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: auto;
+            padding: 80px 0;
+        }
+
+        .promo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.freepik.com/free-vector/abstract-medical-wallpaper-template-design_53876-61811.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .promo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .promo-image {
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .promo-image img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+        }
+
+        .promo-content {
+            flex-grow: 1;
+            color: white;
+        }
+
+        .promo-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .promo-text {
+            font-size: 18px;
+            margin-bottom: 0;
+            opacity: 0.9;
+        }
+
+        .promo-button {
+            flex-shrink: 0;
+        }
+
+        .white-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: white;
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .white-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Patient Resources */
+        .resources {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .resource-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .resource-icon {
+            width: 100%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: white;
+        }
+
+        .resource-icon.privacy {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+        }
+
+        .resource-icon.records {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+        }
+
+        .resource-icon.info {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+
+        .resource-content {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .resource-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .resource-description {
+            color: var(--text);
+            margin-bottom: 25px;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .download-button.privacy {
+            background: linear-gradient(135deg, #ef4444, #f87171);
+        }
+
+        .download-button.records {
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+        }
+
+        .download-button.info {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .download-button i {
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-shape {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 50%;
+        }
+
+
+        /* Responsiveness */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: all 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero-container,
+            .about-container,
+            .hours-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content,
+            .about-content,
+            .hours-content {
+                padding: 0;
+                margin-bottom: 40px;
+            }
+
+            .services-grid,
+            .resources-grid,
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .promo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-floating-card,
+            .hours-card {
+                position: static;
+                margin-top: 30px;
+            }
+
+            .about-accent-image {
+                display: none;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 992px) {
+
+            .services-grid,
+            .resources-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background elements -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="/images/logo.jpg" alt="Shivani Healthcare Logo">
+                <div class="logo-text">
+                    <h1>Shivani Healthcare</h1>
+                    <p>Of Georgia</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#" class="contact-button">Make an Appointment</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content animate-fade-right">
+                <span class="hero-subtitle">Board Certified Internal Medicine</span>
+                <h1>Dr. Panchshil Patel, M.D.</h1>
+                <p>Experience personalized healthcare with comprehensive primary care medicine. We're accepting new
+                    patients and walk-ins at our Roswell, GA location.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="primary-button">Make an Appointment</a>
+                    <a href="#" class="secondary-button">Learn More</a>
+                </div>
+            </div>
+            <!-- <div class="hero-image animate-fade-left">
+                <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope-hands-hospital-background_1423-1.jpg"
+                    alt="Dr. Panchshil Patel">
+                <div class="hero-floating-card">
+                    <div class="hero-card-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="hero-card-text">
+                        <h3>Personalized Care</h3>
+                        <p>Experienced physician</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <span class="section-subtitle">What We Offer</span>
+                <h2 class="section-title">Our Medical Services</h2>
+                <p class="section-description">We provide comprehensive primary care medicine with a focus on patient
+                    wellness and preventive care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-fade-up animate-delay-100">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Health Maintenance</h3>
+                        <p class="service-description">Preventive care and regular check-ups to maintain your overall
+                            health and wellness.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-fade-up animate-delay-200">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Annual Physical</h3>
+                        <p class="service-description">Comprehensive yearly examinations to assess your health status
+                            and prevent illness.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-fade-up animate-delay-300">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Immunizations</h3>
+                        <p class="service-description">Protection against preventable diseases with up-to-date vaccines
+                            for all ages.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-fade-up animate-delay-100">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Travel Exams</h3>
+                        <p class="service-description">Pre-travel consultations and necessary vaccinations for
+                            international travel.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-fade-up animate-delay-200">
+                    <div class="service-icon">
+                        <i class="fas fa-venus"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Women's Health</h3>
+                        <p class="service-description">Specialized care addressing the unique health concerns of women
+                            at all life stages.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card animate-fade-up animate-delay-300">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Onsite Lab Services</h3>
+                        <p class="service-description">Convenient in-office laboratory testing for faster diagnosis and
+                            treatment.</p>
+                        <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Doctor Section -->
+    <section class="section about" id="about">
+        <div class="container about-container">
+            <div class="about-image animate-fade-right">
+                <img src="images/docpic.jpg" alt="Dr. Panchshil Patel" class="about-main-image">
+                <!-- <img src="https://img.freepik.com/free-photo/medical-banner-with-doctor-working-hospital_23-2149212111.jpg"
+                    alt="Medical Facility" class="about-accent-image"> -->
+            </div>
+            <div class="about-content animate-fade-left">
+                <span class="about-subtitle">About The Doctor</span>
+                <h2 class="about-title">Meet Dr. Panchshil Patel</h2>
+                <p class="about-text">Dr. Panchshil Patel has been practicing medicine for the past 10 years. Initially,
+                    he received his medical training at Ross University School of Medicine. He completed his residency
+                    at University of Connecticut School of Medicine – primary care internal medicine track.</p>
+                <p class="about-text">He worked as an attending physician in medicine at Grady Memorial Hospital working
+                    for Emory University school of medicine. Here, he taught new medical doctors in training as well as
+                    medical students as an instructor of medicine and later assistant professor of medicine.</p>
+                <p class="about-text">Dr. Patel has taken care of patients throughout all the different spectrums of
+                    healthcare. He has worked with patients in the intensive care unit all the way down to taking care
+                    of patients who are at end of life under hospice service.</p>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="feature-text">Board Certified in Internal Medicine</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <span class="feature-text">Hospital Privileges</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <span class="feature-text">Primary Care Provider</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <span class="feature-text">Hospice Medical Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hours Section -->
+    <section class="section hours" id="hours">
+        <div class="container hours-container">
+            <div class="hours-content animate-fade-right">
+                <span class="section-subtitle">When To Visit</span>
+                <h2 class="section-title">Office Hours</h2>
+                <div class="hours-card">
+                    <div class="hours-card-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="hours-card-text">
+                        <h3>Schedule an Appointment</h3>
+                        <p>Call us at 770-686-3246</p>
+                    </div>
+                </div>
+                <p class="section-description">Our office is open most weekdays for your convenience. We welcome
+                    walk-ins for sick visits or you can make an appointment.</p>
+                <ul class="hours-list">
+                    <li class="hours-item">
+                        <span class="day">Monday</span>
+                        <span class="time">9:00am – 4:00pm</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Tuesday</span>
+                        <span class="time">9:00am – 4:00pm</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Wednesday</span>
+                        <span class="time closed">CLOSED</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Thursday</span>
+                        <span class="time">9:00am – 4:00pm</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Friday</span>
+                        <span class="time">9:00am – 4:00pm</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Saturday</span>
+                        <span class="time closed">CLOSED</span>
+                    </li>
+                    <li class="hours-item">
+                        <span class="day">Sunday</span>
+                        <span class="time closed">CLOSED</span>
+                    </li>
+                </ul>
+                <div class="hours-note">
+                    <p>Walk-ins welcome for sick visits or by appointments. Please call ahead if possible.</p>
+                </div>
+            </div>
+            <div class="hours-image animate-fade-left">
+                <img src="https://img.freepik.com/free-photo/gynecologist-evaluating-pregnancy-with-patient_23-2149353047.jpg"
+                    alt="Office Reception">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo">
+        <div class="container promo-container">
+            <div class="promo-image animate-fade-right">
+                <img src="https://img.freepik.com/free-photo/covid-still-life-with-vaccine_23-2149079584.jpg"
+                    alt="Flu Shot">
+            </div>
+            <div class="promo-content animate-fade-up">
+                <h2 class="promo-title">Flu Shot Available Now!</h2>
+                <p class="promo-text">Protect yourself and your family this flu season. Get your immunization shot
+                    today! Call us or visit our office.</p>
+            </div>
+            <div class="promo-button animate-fade-left">
+                <a href="#" class="white-button">Schedule Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patient Resources Section -->
+    <section class="section resources" id="resources">
+        <div class="container">
+            <div class="section-header animate-fade-up">
+                <span class="section-subtitle">Patient Resources</span>
+                <h2 class="section-title">Helpful Information</h2>
+                <p class="section-description">Download these important forms before your visit to streamline your
+                    appointment process.</p>
+            </div>
+            <div class="resources-grid">
+                <div class="resource-card animate-fade-up animate-delay-100">
+                    <div class="resource-icon privacy">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Notice of Privacy Practice</h3>
+                        <p class="resource-description">Learn about how we protect your medical information and your
+                            rights.</p>
+                        <a href="#" class="download-button privacy">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate-fade-up animate-delay-200">
+                    <div class="resource-icon records">
+                        <i class="fas fa-file-medical"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Release of Medical Records</h3>
+                        <p class="resource-description">Authorize the release of your medical information to other
+                            providers.</p>
+                        <a href="#" class="download-button records">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                <div class="resource-card animate-fade-up animate-delay-300">
+                    <div class="resource-icon info">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3 class="resource-title">Patient Information</h3>
+                        <p class="resource-description">New patient registration form to complete before your first
+                            visit.</p>
+                        <a href="#" class="download-button info">
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <!-- <div class="footer-shape"></div> -->
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section animate-fade-up">
+                    <div class="footer-logo">
+                        <img src="/images/logo.jpg" alt="Shivani Healthcare Logo">
+                        <div class="footer-logo-text">
+                            <h2>Shivani Healthcare</h2>
+                            <p>Of Georgia</p>
+                        </div>
+                    </div>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> 201 Bombay Lane, Roswell, GA 30076</p>
+                        <p><i class="fas fa-phone-alt"></i> 770-686-3246</p>
+                        <p><i class="fas fa-fax"></i> 770-674-7366</p>
+                        <p><i class="fas fa-envelope"></i> Shivanihealthcareofgeorgia@gmail.com</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-google"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section animate-fade-up animate-delay-100">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Patient Portal</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section animate-fade-up animate-delay-200">
+                    <h3 class="footer-title">Important Info</h3>
+                    <div class="footer-warning">
+                        <h3>Emergency?</h3>
+                        <p>For Life-Threatening Emergencies Call 911</p>
+                    </div>
+                    <a href="#" class="primary-button" style="margin-top: 20px; display: inline-block;">Patient
+                        Portal</a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 by Shivani Healthcare of Georgia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', function () {
+            navLinks.classList.toggle('active');
+        });
+
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animate-fade-up, .animate-fade-right, .animate-fade-left');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '.9';
+                        entry.target.style.transform = 'translate(0, 0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+
+</html>
